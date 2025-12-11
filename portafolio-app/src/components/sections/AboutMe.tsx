@@ -29,7 +29,7 @@ export default function AboutMe() {
                 <div className="bg-gray-100 rounded-2xl p-8 ring-1 ring-gray-900/5">
 
                     {/* INTERESTS */}
-                    <h3 className="mt-0 flex items-center gap-2">
+                    <h3 className="text-gray-900 mt-0 flex items-center gap-2">
                         Interests
                     </h3>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none pl-0">

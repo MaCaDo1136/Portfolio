@@ -77,7 +77,7 @@ export default function Skills() {
                             <div>
                                 <strong className="text-gray-200 block text-sm">FullStack Developer</strong>
                                 <span className="text-xs text-gray-500">
-                                    Solid knowledge of Data Structures.<span className="text-indigo-300"> Python/Java/C++</span> Backend experience,<span className="text-indigo-300"> SQL-based</span> Database management, and<span className="text-indigo-300"> React/HTML</span> based Frontend experience.
+                                    Solid knowledge of Data Structures.<span className="text-indigo-300"> Python/Go/C++/Java</span> Backend experience,<span className="text-indigo-300"> SQL-based</span> Database management, and<span className="text-indigo-300"> React/HTML</span> based Frontend experience.
                                 </span>
                             </div>
                         </li>

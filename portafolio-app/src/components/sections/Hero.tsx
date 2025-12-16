@@ -9,7 +9,7 @@ function Hero() {
                 {/* Izquierda */}
                 <div className="text-left, w-xl">
                     <div className="hidden sm:mb-4 sm:flex">
-                        <span className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        <span className="relative rounded-full px-3 py-1 text-base leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 transition-transform duration-300 hover:scale-105 cursor-pointer">
                             Available for new Projects
                         </span>
                     </div>

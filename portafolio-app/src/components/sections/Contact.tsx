@@ -1,6 +1,10 @@
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
+
+    const [state, handleSubmit] = useForm("xqarvkpb");
+
     return (
         <div className="relative isolate px-6 lg:px-8 mx-auto py-24">
 
@@ -17,14 +21,18 @@ export default function Contact() {
                         I am mainly interested in Remote or Hybrid roles, but I am open to other options as well.
                     </p>
 
+                    <p className="mt-4 text-lg leading-8 text-gray-400">
+                        Feel free to reach out through the form or directly via email. I'll get back to you as soon as possible!
+                    </p>
+
                     <div className="mt-8 space-y-4">
                         {/* Email Directo */}
                         <div className="flex gap-4 items-center text-gray-300">
                             <div className="p-2 bg-white/5 rounded-lg border border-white/10">
                                 <EnvelopeIcon className="h-6 w-6 text-indigo-400" />
                             </div>
-                            <a href="mailto:contact@mariocd.dev" className="hover:text-white transition-colors">
-                                contact@mariocd.dev
+                            <a href="mailto:contact@mariocasas.dev" className="hover:text-white transition-colors">
+                                contact@mariocasas.dev
                             </a>
                         </div>
 
@@ -50,70 +58,88 @@ export default function Contact() {
                     </div>
                 </div>
 
-                {/* DERECHA */}
-                <form action="#" method="POST" className="rounded-2xl bg-slate-900/50 p-8 border border-white/10 shadow-2xl">
-                    <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                {/* DERECHA:Formspree */}
+                <div className="rounded-2xl bg-slate-900/50 p-8 border border-white/10 shadow-2xl">
 
-                        {/* Nombre */}
-                        <div className="sm:col-span-2">
-                            <label htmlFor="name" className="block text-sm font-semibold leading-6 text-white">
-                                Name
-                            </label>
-                            <div className="mt-2.5">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    autoComplete="given-name"
-                                    className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                                />
+                    {/* Si ya se envió, mostramos mensaje de éxito */}
+                    {state.succeeded ? (
+                        <div className="h-full flex flex-col items-center justify-center text-center py-12">
+                            <div className="rounded-full bg-green-500/10 p-4 mb-4">
+                                <EnvelopeIcon className="h-12 w-12 text-green-400" />
                             </div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                            <p className="text-gray-400">Thanks for reaching out, Mario. <br /> I'll get back to you shortly at your email.</p>
                         </div>
+                    ) : (
+                        /* Si no, mostramos el formulario */
+                        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 
-                        {/* Email */}
-                        <div className="sm:col-span-2">
-                            <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white">
-                                Email
-                            </label>
-                            <div className="mt-2.5">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    autoComplete="email"
-                                    className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                                />
+                            {/* Nombre */}
+                            <div className="sm:col-span-2">
+                                <label htmlFor="name" className="block text-sm font-semibold leading-6 text-white">
+                                    Name
+                                </label>
+                                <div className="mt-2.5">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        autoComplete="given-name"
+                                        required
+                                        className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Mensaje */}
-                        <div className="sm:col-span-2">
-                            <label htmlFor="message" className="block text-sm font-semibold leading-6 text-white">
-                                Message
-                            </label>
-                            <div className="mt-2.5">
-                                <textarea
-                                    name="message"
-                                    id="message"
-                                    rows={4}
-                                    className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                                    defaultValue={''}
-                                />
+                            {/* Email */}
+                            <div className="sm:col-span-2">
+                                <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white">
+                                    Email
+                                </label>
+                                <div className="mt-2.5">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        autoComplete="email"
+                                        required
+                                        className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                    />
+                                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-sm mt-1" />
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    {/* Botón de Enviar */}
-                    <div className="mt-8">
-                        <button
-                            type="submit"
-                            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all hover:scale-[1.02]"
-                        >
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+                            {/* Mensaje */}
+                            <div className="sm:col-span-2">
+                                <label htmlFor="message" className="block text-sm font-semibold leading-6 text-white">
+                                    Message
+                                </label>
+                                <div className="mt-2.5">
+                                    <textarea
+                                        name="message"
+                                        id="message"
+                                        rows={4}
+                                        required
+                                        className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                    />
+                                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-sm mt-1" />
+                                </div>
+                            </div>
 
+                            {/* Botón de Enviar */}
+                            <div className="mt-8 sm:col-span-2">
+                                <button
+                                    type="submit"
+                                    disabled={state.submitting}
+                                    className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                >
+                                    {state.submitting ? 'Sending...' : 'Send Message'}
+                                </button>
+                            </div>
+                        </form>
+                    )}
+
+                </div>
             </div>
         </div>
     )

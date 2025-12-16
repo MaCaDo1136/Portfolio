@@ -1,7 +1,7 @@
 export default function AboutMe() {
     return (
         <div className="relative isolate px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
                 {/* Izquierda */}
                 <div>

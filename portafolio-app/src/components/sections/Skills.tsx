@@ -7,7 +7,7 @@ import {
 
 export default function Skills() {
     return (
-        <div className="relative isolate px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative isolate px-6 lg:px-8  mx-auto">
 
             {/* Intro */}
             <div className="mb-12">

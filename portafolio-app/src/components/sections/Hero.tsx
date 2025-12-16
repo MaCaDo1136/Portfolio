@@ -4,7 +4,7 @@ import ProfilePic from '../../assets/Mario_Profile.jpeg'
 function Hero() {
     return (
         <div className="relative isolate px-6 pt-20 pb-16 lg:px-8">
-            <div className="mx-auto max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                 {/* Izquierda */}
                 <div className="text-left, w-xl">
@@ -53,7 +53,7 @@ function Hero() {
                             LinkedIn
                         </a>
 
-                        <a href="mailto:contact@mariocd.dev">
+                        <a href="mailto:contact@mariocasas.dev">
                             Mail Me <span aria-hidden="true">→</span>
                         </a>
                     </div>

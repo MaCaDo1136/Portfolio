@@ -4,12 +4,12 @@ import ProfilePic from '../../assets/Mario_Profile.jpeg'
 function Hero() {
     return (
         <div className="relative isolate px-6 pt-20 pb-16 lg:px-8">
-            <div className="mx-auto max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                 {/* Izquierda */}
                 <div className="text-left, w-xl">
                     <div className="hidden sm:mb-4 sm:flex">
-                        <span className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        <span className="relative rounded-full px-3 py-1 text-base leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 transition-transform duration-300 hover:scale-105 cursor-pointer">
                             Available for new Projects
                         </span>
                     </div>
@@ -53,7 +53,7 @@ function Hero() {
                             LinkedIn
                         </a>
 
-                        <a href="mailto:contact@mariocd.dev">
+                        <a href="mailto:contact@mariocasas.dev">
                             Mail Me <span aria-hidden="true">→</span>
                         </a>
                     </div>

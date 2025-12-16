@@ -1,7 +1,7 @@
 export default function AboutMe() {
     return (
         <div className="relative isolate px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
                 {/* Izquierda */}
                 <div>
@@ -26,10 +26,10 @@ export default function AboutMe() {
                 </div>
 
                 {/*Derecha*/}
-                <div className="bg-gray-100 rounded-2xl p-8 ring-1 ring-gray-900/5">
+                <div className="rounded-2xl bg-slate-900/40 border border-white/20 p-6 hover:border-white/50 transition-all duration-300 group">
 
                     {/* INTERESTS */}
-                    <h3 className="mt-0 flex items-center gap-2">
+                    <h3 className="text-white mt-0 flex items-center gap-2">
                         Interests
                     </h3>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none pl-0">
@@ -47,7 +47,7 @@ export default function AboutMe() {
 
                     <div className="space-y-4">
                         <div>
-                            <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">Languages</span>
+                            <span className="text-sm font-bold text-white uppercase tracking-wide">Languages</span>
                             <div className="flex flex-wrap gap-2 mt-2">
                                 <span className="bg-blue-100 text-blue-700 ">Python (Native)</span>
                                 <span className="bg-yellow-100 text-yellow-800 ">Java (Adv)</span>
@@ -57,7 +57,7 @@ export default function AboutMe() {
                         </div>
 
                         <div>
-                            <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">Operating Systems</span>
+                            <span className="text-sm font-bold text-white uppercase tracking-wide">Operating Systems</span>
                             <div className="flex flex-wrap gap-2 mt-2">
                                 <span className="bg-indigo-100 text-indigo-700 ">Arch Linux</span>
                                 <span className="bg-orange-100 text-orange-700 ">Ubuntu Server</span>
@@ -66,7 +66,7 @@ export default function AboutMe() {
                         </div>
 
                         <div>
-                            <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">Tools</span>
+                            <span className="text-sm font-bold text-white uppercase tracking-wide">Tools</span>
                             <div className="flex flex-wrap gap-2 mt-2">
                                 <span className="bg-green-100 text-green-700 ">NeoVim</span>
                                 <span className="bg-red-100 text-red-700 ">Git</span>

@@ -34,7 +34,7 @@ export default function Navbar() {
                         {/* LOGO / NOMBRE */}
                         <div className="flex shrink-0 items-center">
                             <CodeBracketIcon className="h-8 w-8 text-indigo-500 mr-2" />
-                            <span className="text-white font-bold text-xl">Mario.dev</span>
+                            <span className="text-white font-bold text-xl">MarioCasas.dev</span>
                         </div>
 
                         {/* Links de Escritorio (Desktop) */}
@@ -88,13 +88,13 @@ export default function Navbar() {
                                     </a>
                                 </MenuItem>
                                 <MenuItem>
-                                    <a href="mailto:contact@mariocd.dev" target="_blank" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
+                                    <a href="mailto:contact@mariocasas.dev" target="_blank" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
                                         Contact me by mail
                                     </a>
                                 </MenuItem>
                                 <MenuItem>
                                     <a href={ResumePDF} className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
-                                        Download Resume
+                                        Download CV
                                     </a>
                                 </MenuItem>
                             </MenuItems>

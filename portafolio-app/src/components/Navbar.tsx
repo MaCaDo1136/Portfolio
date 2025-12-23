@@ -1,6 +1,8 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
-import ResumePDF from '../assets/Resume_MarioCasasDonjuan.pdf'
+import { ChevronDownIcon } from '@heroicons/react/20/solid' // Icono para la flechita
+import CurriculumVitaeEnglishPDF from '../assets/CV_MarioCasasDonjuan_EN.pdf'
+import CurriculumVitaeEspañolPDF from '../assets/CV_MarioCasasDonjuan_ESP.pdf'
 
 const navigation = [
     { name: 'Home', href: '#home', current: false },
@@ -57,14 +59,38 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Seccion de la derecha */}
+                    {/* Seccion de la derecha (Botones y Dropdowns) */}
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
+                        {/* --- DROPDOWN DE CV --- */}
+                        <Menu as="div" className="relative ml-3">
+                            <div>
+                                <MenuButton className="group relative flex items-center gap-x-1 rounded-full bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">
+                                    Download CV
+                                    <ChevronDownIcon className="-mr-0.5 h-5 w-5 text-indigo-200" aria-hidden="true" />
+                                </MenuButton>
+                            </div>
+                            <MenuItems
+                                transition
+                                className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-leave:duration-75 data-enter:ease-out data-leave:ease-in"
+                            >
+                                <MenuItem>
+                                    <a href={CurriculumVitaeEnglishPDF} download="CV_MarioCasas_EN.pdf" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
+                                        🇬🇧 English
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a href={CurriculumVitaeEspañolPDF} download="CV_MarioCasas_ESP.pdf" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
+                                        🇲🇽 Español
+                                    </a>
+                                </MenuItem>
+                            </MenuItems>
+                        </Menu>
+
+                        {/* --- DROPDOWN DE SOCIAL LINKS --- */}
                         <Menu as="div" className="relative ml-3">
                             <div>
                                 <MenuButton className="group relative flex items-center gap-x-2 rounded-full bg-gray-800 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-gray-700 transition-colors">
-                                    <span className="absolute -inset-1.5" />
-                                    <span className="sr-only">Open user menu</span>
                                     <span className="font-medium hidden sm:block text-blue-50">
                                         Social Links
                                     </span>
@@ -78,23 +104,18 @@ export default function Navbar() {
                                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-leave:duration-75 data-enter:ease-out data-leave:ease-in"
                             >
                                 <MenuItem>
-                                    <a href="https://github.com/MaCaDo1136" target="_blank" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
+                                    <a href="https://github.com/MaCaDo1136" target="_blank" rel="noreferrer" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
                                         GitHub
                                     </a>
                                 </MenuItem>
                                 <MenuItem>
-                                    <a href="https://linkedin.com/in/mario-casas-donjuan/" target="_blank" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
+                                    <a href="https://linkedin.com/in/mario-casas-donjuan/" target="_blank" rel="noreferrer" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
                                         LinkedIn
                                     </a>
                                 </MenuItem>
                                 <MenuItem>
-                                    <a href="mailto:contact@mariocasas.dev" target="_blank" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
+                                    <a href="mailto:contact@mariocasas.dev" className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
                                         Contact me by mail
-                                    </a>
-                                </MenuItem>
-                                <MenuItem>
-                                    <a href={ResumePDF} className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-none">
-                                        Download CV
                                     </a>
                                 </MenuItem>
                             </MenuItems>
@@ -103,7 +124,7 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Menú Móvil (Se despliega al dar click en hamburguesa) */}
+            {/* Menú Móvil */}
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
                     {navigation.map((item) => (
@@ -120,6 +141,9 @@ export default function Navbar() {
                             {item.name}
                         </DisclosureButton>
                     ))}
+                    {/* Botones móviles extra si se desea (opcional) */}
+                    <a href={CurriculumVitaeEnglishPDF} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CV English</a>
+                    <a href={CurriculumVitaeEspañolPDF} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CV Español</a>
                 </div>
             </DisclosurePanel>
         </Disclosure>

@@ -1,6 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/20/solid' // Icono para la flechita
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import CurriculumVitaeEnglishPDF from '../assets/CV_MarioCasasDonjuan_EN.pdf'
 import CurriculumVitaeEspañolPDF from '../assets/CV_MarioCasasDonjuan_ESP.pdf'
 
@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
 
-                    {/* Botón de Menú Móvil (Hamburguesa) */}
+                    {/* Botón de Menú Móvil (Hamburguesa) - IZQUIERDA */}
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                             <span className="absolute -inset-0.5" />
@@ -32,14 +32,15 @@ export default function Navbar() {
                         </DisclosureButton>
                     </div>
 
+                    {/* LOGO y MENÚ DE ESCRITORIO - CENTRO/IZQUIERDA */}
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         {/* LOGO / NOMBRE */}
                         <div className="flex shrink-0 items-center">
                             <CodeBracketIcon className="h-8 w-8 text-indigo-500 mr-2" />
-                            <span className="text-white font-bold text-xl">MarioCasas.dev</span>
+                            <span className="text-white font-bold text-xl truncate">MarioCasas.dev</span>
                         </div>
 
-                        {/* Links de Escritorio (Desktop) */}
+                        {/* Links de Escritorio (Desktop ONLY) */}
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
@@ -59,11 +60,12 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Seccion de la derecha (Botones y Dropdowns) */}
+                    {/* SECCIÓN DERECHA (CV y Social) */}
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                        {/* --- DROPDOWN DE CV --- */}
-                        <Menu as="div" className="relative ml-3">
+                        {/* --- DROPDOWN DE CV (SOLO PC) --- */}
+                        {/* Agregué 'hidden sm:block' aquí para ocultarlo en celular */}
+                        <Menu as="div" className="relative ml-3 hidden sm:block">
                             <div>
                                 <MenuButton className="group relative flex items-center gap-x-1 rounded-full bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">
                                     Download CV
@@ -124,9 +126,10 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Menú Móvil */}
+            {/* --- MENÚ MÓVIL DESPLEGABLE (Lo que sale al picar la hamburguesa) --- */}
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
+                    {/* Navegación normal */}
                     {navigation.map((item) => (
                         <DisclosureButton
                             key={item.name}
@@ -141,9 +144,28 @@ export default function Navbar() {
                             {item.name}
                         </DisclosureButton>
                     ))}
-                    {/* Botones móviles extra si se desea (opcional) */}
-                    <a href={CurriculumVitaeEnglishPDF} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CV English</a>
-                    <a href={CurriculumVitaeEspañolPDF} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CV Español</a>
+
+                    {/* Divisor para separar el CV */}
+                    <div className="border-t border-gray-700 my-2 pt-2"></div>
+
+                    {/* Botones de CV para Celular (Se muestran aquí en vez del botón azul de arriba) */}
+                    <p className="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                        Download CV
+                    </p>
+                    <a
+                        href={CurriculumVitaeEnglishPDF}
+                        download="CV_MarioCasas_EN.pdf"
+                        className="block rounded-md px-3 py-2 text-base font-medium text-indigo-400 hover:bg-gray-700 hover:text-white"
+                    >
+                        🇬🇧 English Version
+                    </a>
+                    <a
+                        href={CurriculumVitaeEspañolPDF}
+                        download="CV_MarioCasas_ESP.pdf"
+                        className="block rounded-md px-3 py-2 text-base font-medium text-indigo-400 hover:bg-gray-700 hover:text-white"
+                    >
+                        🇲🇽 Versión en Español
+                    </a>
                 </div>
             </DisclosurePanel>
         </Disclosure>

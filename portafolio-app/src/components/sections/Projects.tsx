@@ -71,7 +71,6 @@ export default function Projects() {
                                     alt={p.title}
                                     className="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-70 transition-all duration-500"
                                 />
-                                {/* Degradado para que el texto se lea siempre */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
                             </div>
                         )}

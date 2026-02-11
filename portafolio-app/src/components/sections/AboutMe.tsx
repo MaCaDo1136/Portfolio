@@ -12,15 +12,14 @@ export default function AboutMe() {
                     </h3>
 
                     <p className="text-gray-300 leading-relaxed mb-4">
-                        I’m currently pursuing my degree at Tecnológico de Monterrey,
-                        blending the rigor of physics and calculus with the creativity
-                        of software development. My background in robotics (FRC Voltec #6647)
-                        taught me how to work under pressure, but my curiosity led me
-                        deep into the world of Data Science and Backend Engineering.
+                        I'm currently pursuing a degree in Robotics and Digital Systems at Tecnológico de Monterrey,
+                        where I've sharpened my skills in software development, data science, and embedded systems.
+                        I have strong foundation in OOP, Control algorithms, and system architecture. I've proven my teamwork and leadership skills
+                        in competitive robotics, leading technical and practical strategy.
                     </p>
                     <p className="text-gray-300 leading-relaxed">
-                        It’s not enough for code to just work; I obsess over efficiency and control.
-                        That’s why I drive <strong className="text-indigo-200">Arch Linux</strong> daily and spend my weekends optimizing my
+                        My passion for technology goes beyond academics. I obsess over code efficiency and control,
+                        which is why I drive <strong className="text-indigo-200">Arch Linux</strong> daily and spend my weekends optimizing my
                         personal Homelab, <em className="text-indigo-200">'The Matrix'</em>, with Raspberry Pis and custom VPNs.
                     </p>
                 </div>
@@ -62,6 +61,8 @@ export default function AboutMe() {
                                 <span className="px-2 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs">Arch Linux</span>
                                 <span className="px-2 py-1 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs">Ubuntu Server</span>
                                 <span className="px-2 py-1 rounded bg-gray-500/10 text-gray-300 border border-gray-500/20 text-xs">Proxmox</span>
+                                <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 text-xs">MacOS</span>
+                                <span className="px-2 py-1 rounded bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-xs">Windows</span>
                             </div>
                         </div>
 

@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
-import Hero from './components/sections/Hero';
-import Skills from './components/sections/Skills'
-import Projects from './components/sections/Projects';
+import AboutMe from './components/sections/AboutMe';
 import Contact from './components/sections/Contact';
-import AboutMe from './components/sections/AboutMe'
+import Experience from './components/sections/Experience';
+import Hero from './components/sections/Hero';
+import Projects from './components/sections/Projects';
+import Skills from './components/sections/Skills';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
 
         <section id="projects" className="min-h-screen pt-20">
           <Projects />
+        </section>
+
+        <section id="experience" className="min-h-screen pt-20">
+          <Experience />
         </section>
 
         <section id="contact" className="min-h-screen pt-20">

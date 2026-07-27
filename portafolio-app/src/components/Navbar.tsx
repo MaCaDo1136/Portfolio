@@ -1,6 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Bars3Icon, CodeBracketIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import CurriculumVitaeEnglishPDF from '../assets/CV_MarioCasasDonjuan_EN.pdf'
 import CurriculumVitaeEspañolPDF from '../assets/CV_MarioCasasDonjuan_ESP.pdf'
 
@@ -9,6 +9,7 @@ const navigation = [
     { name: 'About Me', href: '#about-me', current: false },
     { name: 'Skills', href: '#skills', current: false },
     { name: 'Projects', href: '#projects', current: false },
+    { name: 'Experience', href: '#experience', current: false },
     { name: 'Contact', href: '#contact', current: false },
 ]
 

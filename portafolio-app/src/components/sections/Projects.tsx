@@ -1,6 +1,6 @@
 import MagicLogisticsPreview from '../../assets/magic-logistics-preview.png';
-import PortfolioPreview from '../../assets/PortfolioPreview.png';
 import ProxmoxPreview from '../../assets/ProxmoxPreview.png';
+import RepLabPreview from '../../assets/RepLabPreview.png';
 import RoboticsImage from '../../assets/Robot.jpeg';
 
 interface Project {
@@ -15,12 +15,12 @@ interface Project {
 export default function Projects() {
     const projects: Project[] = [
         {
-            title: "Magic-Logistics",
-            description: "Full-stack web application that aims to optimize flight inventory management.",
-            tags: ["Python", "FastAPI", "React", "ML"],
-            link: "https://www.youtube.com/watch?v=6BpIZmF28jQ",
+            title: "RepLab",
+            description: "Computer-vision pipeline that scores lifting form rep by rep, with LLM coaching feedback.",
+            tags: ["Python", "FastAPI", "OpenCV", "MediaPipe"],
+            link: "https://github.com/MaCaDo1136/RepLab",
             size: "large",
-            image: MagicLogisticsPreview
+            image: RepLabPreview
         },
         {
             title: "Homelab Infrastructure",
@@ -30,17 +30,17 @@ export default function Projects() {
             image: ProxmoxPreview
         },
         {
-            title: "Personal Portfolio",
-            description: "Built with React and Tailwind CSS.",
-            tags: ["React", "Tailwind"],
-            link: "https://github.com/MaCaDo1136/Portfolio",
+            title: "Magic-Logistics",
+            description: "Predicts per-flight product stocking with a RandomForest model served over FastAPI.",
+            tags: ["Python", "FastAPI", "React", "ML"],
+            link: "https://www.youtube.com/watch?v=6BpIZmF28jQ",
             size: "small",
-            image: PortfolioPreview
+            image: MagicLogisticsPreview
         },
         {
             title: "Competitive Robots (FRC & FTC)",
-            description: "Programming and Mentoring for competitive robotics teams using Java",
-            tags: ["Java"],
+            description: "Real-time Java control systems for 60 kg robots — PID loops and vision-based positioning.",
+            tags: ["Java", "PID", "Computer Vision"],
             link: "https://github.com/VOLTEC6647",
             size: "large",
             image: RoboticsImage
